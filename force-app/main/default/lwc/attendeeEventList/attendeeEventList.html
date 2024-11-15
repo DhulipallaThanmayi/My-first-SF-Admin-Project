@@ -1,0 +1,23 @@
+<!-- sldsValidatorIgnore -->
+<!-- sldsValidatorIgnore -->
+<template>
+    <lightning-card title="Event List">
+    <lightning-accordion>
+        <!-- sldsValidatorIgnoreNextLine -->
+        <lightning-accordion-section name="upcomingL" label="UpcomingList" title="UpcomingList">
+            <lightning-layout horizontal-align="spread">
+                <lightning-datatable key-field="id" columns={columnsList} data={upcomeevents}>
+                </lightning-datatable>
+            </lightning-layout>
+
+        </lightning-accordion-section>
+<!-- sldsValidatorIgnoreNextLine -->
+        <lightning-accordion-section name="pastL" label="pastL" title="pastList">
+            <lightning-layout horizontal-align="spread">
+                <lightning-datatable key-field="id" data={pastEvens} 
+                    columns={columnsList}></lightning-datatable>
+            </lightning-layout>
+        </lightning-accordion-section>
+    </lightning-accordion>
+    </lightning-card>
+</template>

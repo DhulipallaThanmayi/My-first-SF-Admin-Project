@@ -1,0 +1,52 @@
+<template>
+    
+    <lightning-card variant="Narrow" title="Event Information" icon-name="standard:event">
+
+    <div class="slds-m-around_small">
+        <lightning-input type="text" required variant="standard" name="Name" value={eventRecord.Name} 
+        label="Name"
+            onchange={handleChange}>
+        </lightning-input>
+
+
+        <c-customlwclookup onselect={handleLookup} object-name="Event_Organizer__c" field-name="Name" 
+            iconname="standard:people" parentidfield="Event_Organizer__c" label="Event Organizer">
+        </c-customlwclookup>
+     
+            <br />
+
+            <lightning-input type="datetime" variant="standard" label="Start Date" 
+            value={eventRecord.Startingdate__c} name="Startingdate__c" 
+            onchange={handlechange} >
+            </lightning-input>
+
+            <lightning-input type="datetime" required variant="standard" value={eventRecord.End_Date_Time__c}
+                name="End_Date_Time__c" label="End Date" onchange={handleChange}>
+            </lightning-input>
+
+            <lightning-input type="number" required variant="standard" value=3
+            name="Max_Seat__c" label="Max Attendees">
+        </lightning-input>
+        
+        <c-customlwclookup onselect={handleLookup} object-name="Location_project__c" 
+        iconname="utility:location" field-name="Name" parentidfield="Location_project__c" 
+        label="Event Location"></c-customlwclookup>
+        
+        <br />
+    </div>
+
+
+    <div class="slds-m-around_small">
+        <lightning-button label="Cancel" title="Cancel" onclick={handleCancel}>
+        </lightning-button>
+        &nbsp; &nbsp;
+        <lightning-button variant="brand" label="Add Event" title="Add Event" onclick={handleClick}>
+        </lightning-button>
+    </div>
+
+
+
+
+</lightning-card>
+
+</template>

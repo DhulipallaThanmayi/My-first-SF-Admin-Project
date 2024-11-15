@@ -1,0 +1,22 @@
+<!-- sldsValidatorIgnore -->
+<template>
+    <lightning-card title="SpeakersList">
+<!-- sldsValidatorIgnoreNextLine -->        
+        <lightning-accordion allow-multiple-sections-open="True" title="Upcoming List">
+            <lightning-accordion-section name="UpListies" label="Upcoming List" title="Upcoming List5">
+                <lightning-layout>
+                <lightning-datatable columns={columnList} data={eventF} title="Upcoming events" 
+                hide-checkbox-column="true" key-field="id" >
+                </lightning-datatable></lightning-layout>
+        </lightning-accordion-section>
+    
+        <lightning-accordion-section>
+            <lightning-layout>
+            <lightning-datatable columns={columnList} data={eventP} title="Past events" 
+                hide-checkbox-column="true" key-field="id" >
+            </lightning-datatable></lightning-layout>
+        </lightning-accordion-section>
+
+        </lightning-accordion>
+    </lightning-card>
+</template>
